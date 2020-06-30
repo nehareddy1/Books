@@ -14,15 +14,10 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: 'Install dotnetsay'
   inputs:
-    command: 'restore'
-    feedsToUse: 'select'
-    vstsFeed: 'my-vsts-feed' # A series of numbers and letters
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    arguments: '--configuration $(buildConfiguration)'
-  displayName: 'dotnet build $(buildConfiguration)'
+    command: custom
+    custom: tool
+    arguments: 'install -g dotnetsay'
   
 
