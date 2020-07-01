@@ -19,5 +19,11 @@ steps:
     command: custom
     custom: tool
     arguments: 'install -g dotnetsay'
+- task: UseDotNet@2
+  displayName: 'Install .NET Core SDK'
+  inputs:
+    version: 3.1.5
+    performMultiLevelLookup: true
+    includePreviewVersions: true
   
 
